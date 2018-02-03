@@ -42,7 +42,7 @@ public class WeChatPlatformTest {
      */
     @WxButton(type = WxButton.Type.VIEW, main = true,
             group = WxButton.Group.RIGHT,
-            url = "http://106.15.186.77/wx/bind",
+            url = "http://magki.top/wx/bind",//106.15.186.77
             name = "学号绑定")
     @WxAsyncMessage
     public WxMessage link(WxRequest wxRequest, WxUser wxUser) {
@@ -63,7 +63,7 @@ public class WeChatPlatformTest {
                          "1) 服务器搭建：使用阿里云的云服务器，系统CentOS_7.4，已完成Java 1.8.0、Maven 3.5.2、Git 2.15.1及相关环境的搭建\n" +
                                     "2) 学习及开发进度：SpringBoot学习中，微信公众平台测试号已搭建demo可完成基本反馈功能",
                          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515134429744&di=4a341de585024ca5791a3e2f64e0c5e2&imgtype=0&src=http%3A%2F%2Fdesignbeats.net%2Fwp-content%2Fuploads%2F2014%2F10%2Fgithub.png",
-                         "https://github.com/LauItachi/WeChatTest")
+                         "https://github.com/LauItachi/WeChatPlatformTest")
                 .build();
     }
 

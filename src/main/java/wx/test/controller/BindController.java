@@ -10,8 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpSession;
-
 /**
  * Created by MagikLau on 2018/1/29.
  * Java web dev
@@ -41,15 +39,15 @@ public class BindController {
     }
 
     @RequestMapping(value = "/wx/bind/confirm", method = RequestMethod.POST)
-    public String bind(ModelMap modelMap, HttpSession httpSession) {
-        String studentID = httpSession.getAttribute("studentID").toString();
-        String last6ID = httpSession.getAttribute("last6ID").toString();
+    public String bindConfirm(ModelMap modelMap, String studentID, String last6ID) {
+//        String studentID = httpServletRequest.getAttribute("studentID").toString();
+//        String last6ID = httpServletRequest.getAttribute("last6ID").toString();
         System.out.println(studentID+"_"+last6ID);
-        if( studentID == null || last6ID == null ){
-            modelMap.addAttribute("bindResult","false");
-        }
-        modelMap.addAttribute("bindResult",studentID+"_"+last6ID);
-        boolean success = true;
+//        if( studentID == null || last6ID == null ){
+//            modelMap.addAttribute("bindResult","false");
+//        }
+//        modelMap.addAttribute("bindResult",studentID+"_"+last6ID);
+//        boolean success = true;
         return "bind_confirm";
     }
 }
