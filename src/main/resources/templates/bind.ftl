@@ -11,7 +11,7 @@
 <div class="weui-toptips weui-toptips_warn hidden">输入有误</div>
 <div class="weui-cells__title">身份绑定</div>
 <div class="weui-cells weui-cells_form">
-	<form id="bind_form" method="post" action="/wx/bind/confirm">
+	<form id="bind_form" <#--method="POST"--> action="/wx/bind/confirm">
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">openID</label></div>
 			<div class="weui-cell__bd">
@@ -44,6 +44,13 @@
 				<i class="weui-icon-warn"></i>
 			</div>
 		</div>
+        <#if msg??>
+		<div class="weui-cell weui-cell_warn">
+			<div class="weui-cell__bd">
+			${msg}
+			</div>
+		</div>
+        </#if>
 		<label for="weuiAgree" class="weui-agree">
 			<input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" required>
 			<span class="weui-agree__text">
@@ -53,7 +60,6 @@
 		<div class="weui-btn-area">
 			<input class="weui-btn weui-btn_primary" id="bind_submit" value="确定" type="submit" />
 		</div>
-
 	</form>
 </div>
 <script type="text/javascript">

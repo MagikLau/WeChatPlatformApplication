@@ -14,15 +14,16 @@
 			<div class="weui-msg">
 				<div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
 				<div class="weui-msg__text-area">
-					<h2 class="weui-msg__title">绑定成功</h2>
+					<h2 class="weui-msg__title">已完成绑定</h2>
 					<p class="weui-msg__desc">
-						已完成学生信息与本公众号的绑定，<br/>
+						已完成与${studentID?c}的绑定，<br/>
 						在使用中的问题欢迎反馈到<a href="https://github.com/LauItachi/WeChatPlatformTest">GitHub</a>
 					</p>
 				</div>
 				<div class="weui-msg__opr-area">
 					<p class="weui-btn-area">
-						<a href="javascript:history.back();" class="weui-btn weui-btn_primary">完成</a>
+						<button class="weui-btn weui-btn_primary" onclick="WeixinJSBridge.call('closeWindow');" >完成</button>
+						<#--<a href="javascript:WeixinJSBridge.call('closeWindow');" class="weui-btn weui-btn_primary">完成</a>-->
 						<!--<a href="javascript:history.back();" class="weui-btn weui-btn_default">辅助操作</a>-->
 					</p>
 				</div>

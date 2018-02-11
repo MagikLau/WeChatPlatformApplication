@@ -8,7 +8,6 @@ import com.mxixm.fastboot.weixin.module.web.WxRequest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.ui.ModelMap;
 
 /**
  * Created by Lau_I on 2018/1/15.
@@ -17,6 +16,7 @@ import org.springframework.ui.ModelMap;
 @WxApplication/*(menuAutoCreate=false)*/
 @WxController
 public class WeChatPlatformTest {
+
     public static void main(String[] args) throws Exception {
         SpringApplication.run(WeChatPlatformTest.class, args);
     }
@@ -42,7 +42,7 @@ public class WeChatPlatformTest {
      */
     @WxButton(type = WxButton.Type.VIEW, main = true,
             group = WxButton.Group.RIGHT,
-            url = "http://magki.top/wx/bind",//106.15.186.77
+            url = "http://106.15.186.77/wx/bind",
             name = "学号绑定")
     @WxAsyncMessage
     public WxMessage link(WxRequest wxRequest, WxUser wxUser) {

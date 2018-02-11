@@ -96,6 +96,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.3.13.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.21" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.44" level="project" />
   </component>
 </module>
