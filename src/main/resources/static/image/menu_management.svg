@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon /  Nav / Menegement</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon-图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-209.000000, -312.000000)" fill="#9A9A9A">
+            <path d="M216.25,324 L211,324 L211,331 C211,331.552285 211.447715,332 212,332 L228,332 C228.552285,332 229,331.552285 229,331 L229,324 L223.75,324 L223,327 L217,327 L216.25,324 Z M214.720759,315 L225.279241,315 L225.279241,315 C225.709671,315 226.09181,315.27543 226.227924,315.683772 L229,324 L211,324 L213.772076,315.683772 L213.772076,315.683772 C213.90819,315.27543 214.290329,315 214.720759,315 L214.720759,315 Z M215,317 L213,324 L227,324 L225,317 L215,317 Z" id="Icon-/--Nav-/-Menegement"></path>
+        </g>
+    </g>
+</svg>

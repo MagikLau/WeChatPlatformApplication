@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon /  Nav / Data</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon-图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-165.000000, -312.000000)" fill="#9A9A9A">
+            <path d="M177.5,314 C182.19442,314 186,317.80558 186,322.5 C186,322.667847 185.995135,322.834559 185.985538,323 L177,323 L177,314.014462 C177.165441,314.004865 177.332153,314 177.5,314 Z M167,324.5 C167,319.973427 170.53831,316.273271 175,316.014462 L175,325 L183.985538,325 C183.726729,329.46169 180.026573,333 175.5,333 C170.80558,333 167,329.19442 167,324.5 Z" id="Icon-/--Nav-/-Data"></path>
+        </g>
+    </g>
+</svg>

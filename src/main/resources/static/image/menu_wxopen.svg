@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon /  Nav / Mini Program</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon-图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-143.000000, -312.000000)" fill="#9A9A9A">
+            <path d="M155,316 C154,317 153,318 153,320 L153,327 C153,328 153,330 151,330 C150.129343,330 147,330 147,327 C147,326 147,325 149,324 C150.309163,323.345418 151,324 151,323 C151,322 150,322 149,322 C148,322 147,323 146,324 C145,325 145,326.264074 145,327 C145,329.811093 147.4149,332 151,332 C154.5851,332 155,328 155,326 L155,320 C155,319 156,317 158,317 C160,317 162,318 162,320 C162,322 160.763983,322.679111 160,323 C159.109083,323.259944 158,323 158,324 C158,324.550185 158.605406,324.797666 159.316591,324.908987 C159.898035,325 160.550185,325 161,325 C163,324 164,323 164,320 C164,317 161.5851,315 158,315 C157.56945,315 156,315 155,316 Z" id="Icon-/--Nav-/-Mini-Program"></path>
+        </g>
+    </g>
+</svg>
