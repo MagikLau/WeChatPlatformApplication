@@ -1,7 +1,7 @@
-# WeChatPlatformTest
-WeChatPlatformTest for Graduation Project based on FastBootWeiXin&WeUI.
+# WeChatPlatformApplication
+WeChatPlatformApplication for Graduation Project based on FastBootWeiXin&WeUI.<br/>
 
 
-Origin project: 
-FastBootWeiXin -> https://github.com/FastBootWeixin/FastBootWeixin
-WeUI -> https://github.com/Tencent/weui
+Origin project: <br/>
+FastBootWeiXin -> https://github.com/FastBootWeixin/FastBootWeixin<br/>
+WeUI -> https://github.com/Tencent/weui<br/>
