@@ -1,4 +1,4 @@
-package wx.test.controller;
+package wx.test.web;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,6 +1,5 @@
-package wx.test.dao;
+package wx.test.repository;
 
-import com.mxixm.fastboot.weixin.util.WxWebUtils;
 import com.mxixm.fastboot.weixin.web.WxUserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class SubscriberDaoImp implements SubscriberDao {
+public class SubscriberRepositoryImp implements SubscriberRepository {
 
     @Autowired
     private WxUserManager wxUserManager ;

@@ -3,7 +3,7 @@ package wx.test.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import wx.test.dao.SubscriberDao;
+import wx.test.repository.SubscriberRepository;
 import wx.test.model.Subscriber;
 
 import java.util.List;
@@ -13,34 +13,33 @@ import java.util.List;
  * Java web dev
  */
 @Service
-@Transactional
-public class SubscriberServiceImp implements SubscriberService{
+public class SubscriberServiceImpl implements SubscriberService{
 
     @Autowired
-    private SubscriberDao subscriberDao;
+    private SubscriberRepository subscriberRepository;
 
     public List<Subscriber> loadAll(){
-        return subscriberDao.loadAll();
+        return subscriberRepository.loadAll();
     }
 
     public List<Subscriber> findByGroupID(String groupID){
 
-        return subscriberDao.findByGroupID(groupID);
+        return subscriberRepository.findByGroupID(groupID);
     }
 
     public Subscriber findByOpenID(String openID){
 
-        return subscriberDao.findByOpenID(openID);
+        return subscriberRepository.findByOpenID(openID);
     }
 
     public void deleteByOpenID(String openID){
 
-        subscriberDao.deleteByOpenID(openID);
+        subscriberRepository.deleteByOpenID(openID);
     }
 
     public void saveSubscriber(Subscriber subscriber){
 
-        subscriberDao.saveSubscriber(subscriber);
+        subscriberRepository.saveSubscriber(subscriber);
     }
 
     public void bindStudentID(Subscriber subscriber, Integer studentID) {

@@ -1,8 +1,5 @@
 package wx.test.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import wx.test.dao.SubscriberDao;
-import wx.test.model.Student;
 import wx.test.model.Subscriber;
 
 import java.util.List;

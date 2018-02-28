@@ -1,6 +1,5 @@
-package wx.test.dao;
+package wx.test.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import wx.test.model.Subscriber;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
  * Created by MagikLau on 2018/2/7.
  * Java web dev
  */
-public interface SubscriberDao {
+public interface SubscriberRepository {
 
     List<Subscriber> loadAll();
 

@@ -11,11 +11,11 @@
 <div class="weui-toptips weui-toptips_warn hidden">输入有误</div>
 <div class="weui-cells__title">身份绑定</div>
 <div class="weui-cells weui-cells_form">
-	<form id="bind_form" <#--method="POST"--> action="/wx/bind/confirm">
+	<form id="bind_form" action="/wx/bind/check">
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">openID</label></div>
 			<div class="weui-cell__bd">
-            ${openID}
+            ${openID}<input type="hidden" value="${openID}">
 			</div>
 		</div>
 		<div class="weui-cell">

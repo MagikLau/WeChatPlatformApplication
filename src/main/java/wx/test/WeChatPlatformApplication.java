@@ -15,10 +15,10 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @WxApplication/*(menuAutoCreate=false)*/
 @WxController
-public class WeChatPlatformTest {
+public class WeChatPlatformApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(WeChatPlatformTest.class, args);
+        SpringApplication.run(WeChatPlatformApplication.class, args);
     }
 
     /**
@@ -61,9 +61,9 @@ public class WeChatPlatformTest {
         return WxMessage.News.builder()
                 .addItem("基于SpringBoot框架的微信公众平台搭建",
                          "1) 服务器搭建：使用阿里云的云服务器，系统CentOS_7.4，已完成Java 1.8.0、Maven 3.5.2、Git 2.15.1及相关环境的搭建\n" +
-                                    "2) 学习及开发进度：SpringBoot学习中，微信公众平台测试号已搭建demo可完成基本反馈功能",
+                                    "2) 学习及开发进度：已完成微信用户与学生信息的绑定",
                          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515134429744&di=4a341de585024ca5791a3e2f64e0c5e2&imgtype=0&src=http%3A%2F%2Fdesignbeats.net%2Fwp-content%2Fuploads%2F2014%2F10%2Fgithub.png",
-                         "https://github.com/LauItachi/WeChatPlatformTest")
+                         "https://github.com/LauItachi/WeChatPlatformApplication")
                 .build();
     }
 
