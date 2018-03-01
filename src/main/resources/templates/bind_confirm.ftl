@@ -23,8 +23,6 @@
 				<div class="weui-msg__opr-area">
 					<p class="weui-btn-area">
 						<button class="weui-btn weui-btn_primary" onclick="WeixinJSBridge.call('closeWindow');" >完成</button>
-						<#--<a href="javascript:WeixinJSBridge.call('closeWindow');" class="weui-btn weui-btn_primary">完成</a>-->
-						<!--<a href="javascript:history.back();" class="weui-btn weui-btn_default">辅助操作</a>-->
 					</p>
 				</div>
 				<div class="weui-msg__extra-area">

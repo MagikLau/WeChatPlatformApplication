@@ -8,9 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import wx.test.model.Student;
 import wx.test.service.StudentService;
 import wx.test.service.SubscriberService;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by MagikLau on 2018/1/29.
@@ -58,20 +63,25 @@ public class BindController {
     }
 
     @RequestMapping("/check")/*(value = "/wx/bind/check", method = RequestMethod.POST)*/
-    public String bindCheck(ModelMap modelMap, String openID, Integer studentID, String last6ID) {
+    public void bindCheck(ModelMap modelMap, HttpServletResponse httpServletResponse,
+                                          String openID, Integer studentID, String last6ID) throws IOException {
+        httpServletResponse.setContentType("application/json;charset=utf-8");
+
         Boolean checked = studentService.checkId(studentID, last6ID);
         System.out.println("checked:"+checked);
+        String data ;
         if( checked ){
-            modelMap.addAttribute("studentID", studentID);
             studentService.bindOpenID(studentID, openID);
-            return "redirect:/confirm?studentID="+studentID;
+            modelMap.addAttribute("studentID", studentID);
+            data = "{\"status\":\"ok\",\"msg\":\"绑定成功\"}";
         }else{
-            String msg = "验证有误.";
-            modelMap.addAttribute("msg", msg);
-            return "redirect:";
+            data = "{\"status\":\"error\",\"msg\":\"绑定失败\"}";
         }
-
-
+//        return data;
+        PrintWriter out = httpServletResponse.getWriter();
+        out.write(data);
+        out.flush();
+        out.close();
     }
 
     @RequestMapping("/confirm")/*(value = "/wx/bind/confirm", method = RequestMethod.POST)*/

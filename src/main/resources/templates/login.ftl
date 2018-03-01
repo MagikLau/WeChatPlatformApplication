@@ -154,25 +154,24 @@
 		                    contentType: 'application/json;charset=utf-8',
 		                    success: function (data) {
 
-			                    if( data.status = 'ok' ){
+			                    if( data.status == 'ok' ){
 				                    console.log('Success FeedBack: '+data.msg);
 				                    alert(data.msg);
 				                    document.referrer === '' ?
-						                    window.location.href = '/home' :
+						                    window.location.href = '/students' :
 						                    window.history.go(-1);
-                                }else if( data.status = 'error' ){
-	                                $('#div_username').addClass("weui-cell_warn");
-	                                $('#div_password').addClass("weui-cell_warn");
-	                                // tips = '用户名密码错误';
-	                                $err_tips.text(data.msg);
-	                                console.log(data.msg);
-	                                $('#error_panel').css('visibility','visible');
+                                }else if( data.status == 'error' ){
+				                    $('#div_username').addClass("weui-cell_warn");
+				                    $('#div_password').addClass("weui-cell_warn");
+				                    // tips = '用户名密码错误';
+				                    $err_tips.text(data.msg);
+				                    console.log(data.msg);
+				                    $('#error_panel').css('visibility','visible');
                                 }
 		                    },
                             error: function (data) {
-
 	                            $err_tips.text("请求出错");
-	                            console.log('请求出错');
+	                            console.log('请求出错'+data);
 		                    }
 	                    });
 	                    <#--$.post('manager_login',-->
