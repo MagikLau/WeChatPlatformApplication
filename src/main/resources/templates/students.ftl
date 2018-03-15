@@ -372,7 +372,7 @@
 							<ul class="weui-desktop-tab__navs"><!---->
                                 <#if studentPage??>
                                     <#list 0..totalPages-1 as page>
-                                    <li class="weui-desktop-tab__nav <#if currentPage == page+1>weui-desktop-tab__nav_current</#if>">
+                                    <li class="weui-desktop-tab__nav <#if currentPage == page>weui-desktop-tab__nav_current</#if>">
 	                                    <a href="/students?page=${page}&size=${currentSize}">${page+1}</a>
                                     </li>
                                     </#list>

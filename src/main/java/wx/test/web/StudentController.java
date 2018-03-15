@@ -39,7 +39,7 @@ public class StudentController {
 
     @RequestMapping("")
     public String showByPage(ModelMap modelMap, Integer page, Integer size) {
-        if( page == null ) page = 1;
+        if( page == null ) page = 0;
         if( size == null ) size = 20;
         Page<Student> studentPage = studentService.findByPageAndSize(page, size);
 

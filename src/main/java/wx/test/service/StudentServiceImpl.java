@@ -43,6 +43,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public Page<Student> findByPageAndSize(Integer page, Integer size){
+        //Reference: http://blog.csdn.net/shanshan_blog/article/details/76690346
         //Pageable是接口，PageRequest是接口实现
         //PageRequest的对象构造函数有多个，page是页数，初始值是0，size是查询结果的条数，后两个参数参考Sort对象的构造方法
         Pageable pageable = new PageRequest(page,size, Sort.Direction.DESC,"studentID");
