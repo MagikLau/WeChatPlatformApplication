@@ -24,4 +24,5 @@ public interface StudentService {
     Boolean checkId(Integer studentID, String idCheckNumber);
 
     Boolean bindOpenID(Integer studentID, String openID);
+
 }

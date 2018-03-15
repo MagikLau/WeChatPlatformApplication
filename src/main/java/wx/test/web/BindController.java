@@ -77,11 +77,11 @@ public class BindController {
         }else{
             data = "{\"status\":\"error\",\"msg\":\"绑定失败\"}";
         }
-//        return data;
         PrintWriter out = httpServletResponse.getWriter();
         out.write(data);
         out.flush();
         out.close();
+//        return data;
     }
 
     @RequestMapping("/confirm")/*(value = "/wx/bind/confirm", method = RequestMethod.POST)*/

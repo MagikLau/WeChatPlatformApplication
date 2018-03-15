@@ -55,13 +55,6 @@
 				<i class="weui-icon-warn"></i>
 			</div>
 		</div>
-        <#--<#if msg??>-->
-		<#--<div class="weui-cell weui-cell_warn">-->
-			<#--<div class="weui-cell__bd">-->
-			<#--${msg}-->
-			<#--</div>-->
-		<#--</div>-->
-        <#--</#if>-->
 		<label for="weuiAgree" class="weui-agree">
 			<input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" >
 			<span class="weui-agree__text">
@@ -97,7 +90,7 @@
 		if( !$('#weuiAgree').is(":checked") ){
 			preCheck += "[请先阅读相关条款]";
 		}
-		alert(preCheck);
+		// alert(preCheck);
 		if( preCheck.length > 0 ){//初步检查
 			preCheck += "异常，请先处理";
 			$toptips.text(preCheck);
@@ -106,13 +99,13 @@
 		}else {//检查无误，发送请求
 			// $msg_dialog.css('opacity', '1');
 			// $msg_dialog.css('display', '');
-			alert("Sending ajax...OpenID: ${openID}");
+			<#--alert("Sending ajax...OpenID: ${openID}");-->
 			$.ajax({
 				url: "/wx/bind/check?studentID=" + studentID + "&last6ID=" + last6ID + "&openID=${openID}",
 				type: "get",
 				contentType: 'application/json;charset=utf-8',
 				success: function (data) {
-					alert("status: "+data.status+", msg: "+data.msg);
+					// alert("status: "+data.status+", msg: "+data.msg);
 					if( data.status == 'ok' ){
 						alert('Bind Success FeedBack: '+data.msg);
 						window.location.href = '/wx/bind/confirm?studentID=' + studentID;
@@ -120,7 +113,7 @@
 						$('#div_studentID').addClass("weui-cell_warn");
 						$('#div_last6ID').addClass("weui-cell_warn");
 						$toptips.text(data.msg);
-						alert(data.msg);
+						// alert(data.msg);
 						$toptips.fadeIn( 300 ).delay( 2000 ).fadeOut( 300 );
 					}
 				},
@@ -134,38 +127,5 @@
 	}
 
 </script>
-<#--<script type="text/javascript">-->
-	<#--$(function(){-->
-		<#--var $toptips = $('.weui-toptips');-->
-
-		<#--$('#bind_submit').on('click', function(){-->
-			<#--var $studentID = $("input[name='studentID']").val();-->
-			<#--var $last6ID = $("input[name='last6ID']").val();-->
-			<#--var msg = null;-->
-			<#--if( $studentID.length !== 8 ){-->
-				<#--msg = "学号输入有误";-->
-				<#--$('#div_studentID').addClass("weui-cell_warn");-->
-			<#--}else{-->
-				<#--$('#div_studentID').removeClass("weui-cell_warn");-->
-			<#--}-->
-			<#--if( $last6ID.length !== 6 ){-->
-				<#--if( msg === null ) msg = "验证信息输入有误";-->
-
-				<#--$('#div_last6ID').addClass("weui-cell_warn");-->
-			<#--}else{-->
-				<#--$('#div_last6ID').removeClass("weui-cell_warn");-->
-			<#--}-->
-			<#--if( !$('#weuiAgree').is(":checked") && msg === null ){-->
-				<#--msg = "请先阅读相关条款";-->
-			<#--}-->
-			<#--if( msg ){-->
-				<#--$toptips.text(msg);-->
-				<#--$toptips.fadeIn( 300 ).delay( 2000 ).fadeOut( 300 );-->
-			<#--}-->
-
-		<#--});-->
-	<#--});-->
-<#--</script>-->
-
 </body>
 </html>

@@ -2,6 +2,8 @@ package wx.test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wx.test.repository.StudentRepository;
@@ -41,8 +43,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public Page<Student> findByPageAndSize(Integer page, Integer size){
-        Page<Student> result = studentRepository.findAll(new PageRequest(page,size));
-        return result;
+        //Pageable是接口，PageRequest是接口实现
+        //PageRequest的对象构造函数有多个，page是页数，初始值是0，size是查询结果的条数，后两个参数参考Sort对象的构造方法
+        Pageable pageable = new PageRequest(page,size, Sort.Direction.DESC,"studentID");
+        Page<Student> studentPage = studentRepository.findAll(pageable);
+
+        return studentPage;
     }
 
     public Boolean checkId(Integer studentID, String idCheckNumber) {

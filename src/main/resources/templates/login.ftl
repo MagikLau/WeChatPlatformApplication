@@ -204,8 +204,11 @@
 		<div class="weui-desktop-foot">
 			<div class="weui-desktop-foot__info">
 				<p class="weui-desktop-links weui-desktop-link-group weui-desktop-link-group_split">
-					<a class="weui-desktop-link" href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
-			</p>
+					<a class="weui-desktop-link" href="https://github.com/LauItachi/WeChatPlatformApplication/blob/master/src/main/resources/templates/students.ftl" target="_blank">GitHub</a>
+					<span class="weui-desktop-link">UI来自<a class="weui-desktop-link" href="https://mp.weixin.qq.com/" target="_blank">微信公众平台</a>，仅供学习使用</span>
+				</p>
+
+
 			</div>
 			<div class="weui-desktop-foot__extra">
 				<p class="weui-desktop-link">Copyright © 2012-2018 Tencent. All Rights
