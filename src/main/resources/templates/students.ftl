@@ -198,6 +198,13 @@
 								</a>
 							</li>
 							<li class="weui-desktop-sub-menu__item">
+								<a title="消息管理" class="weui-desktop-menu__link " data-id="10007" href="/messages/">
+								<span class="weui-desktop-menu__link__inner">
+									<span class="weui-desktop-menu__name">消息管理</span>
+								</span>
+								</a>
+							</li>
+							<li class="weui-desktop-sub-menu__item">
 								<a title="待扩展接口" class="weui-desktop-menu__link " data-id="10007" href="#">
 								<span class="weui-desktop-menu__link__inner">
 									<span class="weui-desktop-menu__name">待扩展接口</span>
@@ -394,15 +401,6 @@
 								<div class="inner_main">
 									<div class="bd">
 
-                                        <#--<form method="post" action="/students/sendMsg">-->
-                                            <#--<input name="tagId" value="1"/>-->
-	                                        <#--<input name="title" value="1"/>-->
-	                                        <#--<input name="description" value="1"/>-->
-	                                        <#--<input name="picUrl" value="1"/>-->
-	                                        <#--<input name="url" value="1"/>-->
-                                            <#--<input type="submit" value="submit"/>-->
-
-                                        <#--</form>-->
 										<div class="table_wrp user_list">
                                             <#if studentPage??>
 											<table class="table" cellspacing="0" style="display: table;">
@@ -510,6 +508,13 @@
                                 </span>
                             </a>
                         </li>
+	                    <li class="weui-desktop-sub-menu__item">
+		                    <a title="消息管理" class="weui-desktop-menu__link " data-id="10007" href="/messages/">
+								<span class="weui-desktop-menu__link__inner">
+									<span class="weui-desktop-menu__name">消息管理</span>
+								</span>
+		                    </a>
+	                    </li>
                         <li class="weui-desktop-menu-plugin">
                             <a data-id="10025" href="#">
                                 <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
