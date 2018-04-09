@@ -58,9 +58,9 @@
 									<i class="icon18_common error"></i>
 									<span class="err_tips">gan</span>
 								</div>
+
 								<div class="weui-btn-area ">
-									<a class="<#--weui-btn weui-btn_primary--> btn_login"
-									   href="javascript:doLogin();">登录</a>
+									<a class="btn_login" href="javascript:doLogin();">登录</a>
 								</div>
 							</div>
 						</div>
@@ -68,81 +68,81 @@
 				</div>
 
 				<script>
-                function doLogin() {
-                    var $err_tips = $('.err_tips');
-                    var usernameInput = $('input[name=\'username\']').val();
-                    var passwordInput = $('input[name=\'password\']').val();
-                    console.log("Username: "+usernameInput+", password: "+passwordInput);
-                    var tips = "" ;
-                    if( usernameInput === null || usernameInput.length < 4 ){
-                        tips += "[用户名]";
-                        $('#div_username').addClass("weui-cell_warn");
-                    }else{
-                        $('#div_username').removeClass("weui-cell_warn");
-                    }
-                    if( passwordInput === null || passwordInput.length < 4 ){
-                        tips += "[密码]";
-                        $('#div_password').addClass("weui-cell_warn");
-                    }else {
-                        $('#div_password').removeClass("weui-cell_warn");
-                    }
-                    console.log('tips1: ['+tips+"]");
-                    if( tips.length > 0 ){
-                        tips += "输入有误";
-                        $err_tips.text(tips);
-                        var $error_panel= $('#error_panel');
-                        $error_panel.css('visibility','visible');
-                        console.log('tips2: '+tips);
-                    }else {
-                        console.log('tips3: '+tips);
-                        $.ajax({
-                            url: "/manager_login?username=" + usernameInput + "&password=" + passwordInput,
-                            type: "post",
-                            contentType: 'application/json;charset=utf-8',
-                            success: function (data) {
+					function doLogin() {
+						var $err_tips = $('.err_tips');
+						var usernameInput = $('input[name=\'username\']').val();
+						var passwordInput = $('input[name=\'password\']').val();
+						console.log("Username: " + usernameInput + ", password: " + passwordInput);
+						var tips = "";
+						if (usernameInput === null || usernameInput.length < 4) {
+							tips += "[用户名]";
+							$('#div_username').addClass("weui-cell_warn");
+						} else {
+							$('#div_username').removeClass("weui-cell_warn");
+						}
+						if (passwordInput === null || passwordInput.length < 4) {
+							tips += "[密码]";
+							$('#div_password').addClass("weui-cell_warn");
+						} else {
+							$('#div_password').removeClass("weui-cell_warn");
+						}
+						console.log('tips1: [' + tips + "]");
+						if (tips.length > 0) {
+							tips += "输入有误";
+							$err_tips.text(tips);
+							var $error_panel = $('#error_panel');
+							$error_panel.css('visibility', 'visible');
+							console.log('tips2: ' + tips);
+						} else {
+							console.log('tips3: ' + tips);
+							$.ajax({
+								url: "/manager_login?username=" + usernameInput + "&password=" + passwordInput,
+								type: "post",
+								contentType: 'application/json;charset=utf-8',
+								success: function (data) {
 
-                                if( data.status == 'ok' ){
-                                    console.log('Success FeedBack: '+data.msg);
-                                    alert(data.msg);
-                                    document.referrer === '' ?
-                                            window.location.href = '/students' :
-                                            window.history.go(-1);
-                                }else if( data.status == 'error' ){
-                                    $('#div_username').addClass("weui-cell_warn");
-                                    $('#div_password').addClass("weui-cell_warn");
-                                    // tips = '用户名密码错误';
-                                    $err_tips.text(data.msg);
-                                    console.log(data.msg);
-                                    $('#error_panel').css('visibility','visible');
-                                }
-                            },
-                            error: function (data) {
-                                $err_tips.text("请求出错");
-                                console.log('请求出错'+data);
-                            }
-                        });
-                    }
+									if (data.status == 'ok') {
+										console.log('Success FeedBack: ' + data.msg);
+										alert(data.msg);
+										document.referrer === '' ?
+												window.location.href = '/students' :
+												window.history.go(-1);
+									} else if (data.status == 'error') {
+										$('#div_username').addClass("weui-cell_warn");
+										$('#div_password').addClass("weui-cell_warn");
+										// tips = '用户名密码错误';
+										$err_tips.text(data.msg);
+										console.log(data.msg);
+										$('#error_panel').css('visibility', 'visible');
+									}
+								},
+								error: function (data) {
+									$err_tips.text("请求出错");
+									console.log('请求出错' + data);
+								}
+							});
+						}
+					}
 				</script>
 
 			</div>
 			<div id="body" class="mp-body page_login"></div>
 		</div>
-			<div id="footer" class="mp-foot" >
-				<div class="weui-desktop-foot">
-					<div class="weui-desktop-foot__info">
-						<p class="weui-desktop-links weui-desktop-link-group weui-desktop-link-group_split">
-							<a class="weui-desktop-link" href="https://github.com/LauItachi/WeChatPlatformApplication/blob/master/src/main/resources/templates/students.ftl" target="_blank">GitHub</a>
-							<span class="weui-desktop-link">UI来自<a class="weui-desktop-link" href="https://mp.weixin.qq.com/" target="_blank">微信公众平台</a>，仅供学习使用</span>
-						</p>
+        <div id="footer" class="mp-foot" >
+            <div class="weui-desktop-foot">
+                <div class="weui-desktop-foot__info">
+                    <p class="weui-desktop-links weui-desktop-link-group weui-desktop-link-group_split">
+                        <a class="weui-desktop-link" href="https://github.com/LauItachi/WeChatPlatformApplication/blob/master/src/main/resources/templates/students.ftl" target="_blank">GitHub</a>
+                        <span class="weui-desktop-link">UI来自<a class="weui-desktop-link" href="https://mp.weixin.qq.com/" target="_blank">微信公众平台</a>，仅供学习使用</span>
+                    </p>
 
 
-					</div>
-					<div class="weui-desktop-foot__extra">
-						<p class="weui-desktop-link">Copyright © 2012-2018 Tencent. All Rights
-						Reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
+                </div>
+                <div class="weui-desktop-foot__extra">
+                    <p class="weui-desktop-link">Copyright © 2012-2018 Tencent. All Rights
+                    Reserved.</p>
+                </div>
+            </div>
+        </div>
 	</body>
 </html>
