@@ -52,7 +52,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.mxixm</groupId>
+            <artifactId>fastboot-weixin</artifactId>
+            <version>0.3.8</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
@@ -61,11 +65,7 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.mxixm</groupId>
-            <artifactId>fastboot-weixin</artifactId>
-            <version>0.3.4</version>
-        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
