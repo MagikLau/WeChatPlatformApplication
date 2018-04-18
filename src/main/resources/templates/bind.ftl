@@ -97,9 +97,6 @@
 			$toptips.fadeIn( 300 ).delay( 5000 ).fadeOut( 300 );
 
 		}else {//检查无误，发送请求
-			// $msg_dialog.css('opacity', '1');
-			// $msg_dialog.css('display', '');
-			<#--alert("Sending ajax...OpenID: ${openID}");-->
 			$.ajax({
 				url: "/wx/bind/check?studentID=" + studentID + "&last6ID=" + last6ID + "&openID=${openID}",
 				type: "get",

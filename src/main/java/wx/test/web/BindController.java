@@ -29,9 +29,6 @@ public class BindController {
     private WxUserManager wxUserManager ;
 
     @Autowired
-    private SubscriberService subscriberService;
-
-    @Autowired
     private StudentService studentService;
 
 
@@ -44,22 +41,23 @@ public class BindController {
         modelMap.addAttribute("openID", openID);
         System.out.println("openID:"+openID);
         Student student = studentService.findStudentByOpenID(openID);
-
+        String result ;
         if( student != null ){
             System.out.println(student);
-            modelMap.addAttribute("studentID", student.getStudentID());
+            Integer studentID = student.getStudentID();
+            modelMap.addAttribute("studentID", studentID);
             System.out.println("studentID:"+student.getStudentID());
 
-            return "bind_confirm";
+            result = "bind_confirm";
         }else{
             String nickName = wxUser.getNickName();
             modelMap.addAttribute("nickName", nickName);
             System.out.println("nickName:"+nickName);
 
-            return "bind";
+            result = "bind";
         }
 
-
+        return result;
     }
 
     @RequestMapping("/check")/*(value = "/wx/bind/check", method = RequestMethod.POST)*/
@@ -81,20 +79,20 @@ public class BindController {
         out.write(data);
         out.flush();
         out.close();
-//        return data;
     }
 
     @RequestMapping("/confirm")/*(value = "/wx/bind/confirm", method = RequestMethod.POST)*/
     public String bindConfirm(ModelMap modelMap, Integer studentID) {
+        String result ;
         if( studentID != null ){
             modelMap.addAttribute("studentID", studentID);
-            return "bind_confirm";
+            result = "bind_confirm";
         }else{
             String msg = "验证有误.";
             modelMap.addAttribute("msg", msg);
-            return "redirect:";
+            result = "redirect:";
         }
-
+        return result;
     }
 
 

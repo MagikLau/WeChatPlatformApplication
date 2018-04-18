@@ -409,7 +409,8 @@
                                                         <th class="table_cell user no_extra">序号</th>
                                                         <th class="table_cell user no_extra">姓名</th>
                                                         <th class="table_cell user no_extra">学号</th>
-                                                        <th class="table_cell user no_extra">专业</th>
+	                                                    <th class="table_cell user no_extra">分院</th>
+	                                                    <th class="table_cell user no_extra">专业</th>
                                                         <th class="table_cell user no_extra">班级</th>
                                                         <th class="table_cell user no_extra">openID</th>
                                                         <th class="table_cell user_opr no_extra">操作</th>
@@ -422,9 +423,10 @@
 	                                                        <td class="table_cell user">${pageContent_index+1}</td>
 	                                                        <td class="table_cell user">${pageContent.name?substring(0,1)}*</td>
 	                                                        <td class="table_cell user">${pageContent.studentID?c}</td>
+	                                                        <td class="table_cell user">${pageContent.academy}</td>
 	                                                        <td class="table_cell user">${pageContent.major}</td>
 	                                                        <td class="table_cell user">${pageContent.grade_class?c}</td>
-	                                                        <td class="table_cell user">${pageContent.openID}</td>
+	                                                        <td class="table_cell user"><#if pageContent.openID?? && pageContent.openID != "">${pageContent.openID}</#if></td>
 	                                                        <td class="table_cell user_opr">
                                                                     <#if pageContent.openID?? && pageContent.openID != "">
 	                                                                    <a href="/students/remove?openID=${pageContent.openID}"

@@ -33,7 +33,10 @@ public class Student {
     private String major;       //主修专业 例如：软件工程
 
     @Column
-    private Integer grade_class;//年级班级 例如：1404
+    private String direction;   //研究方向 例如：Java应用开发、移动互联网应用开发、数据库应用
+
+    @Column(name = "grade_class")
+    private Integer gradeClass;//年级班级 例如：1404
 
     @Column(nullable = false)
     private String idCheckNumber;//身份证核对信息，取最后6位
@@ -47,8 +50,10 @@ public class Student {
                 ", birthYear=" + birthYear +
                 ", academy='" + academy + '\'' +
                 ", major='" + major + '\'' +
-                ", grade_class=" + grade_class +
+                ", direction='" + direction + '\'' +
+                ", gradeClass=" + gradeClass +
                 ", idCheckNumber=" + idCheckNumber +
+                ", openID=" + openID +
                 '}';
     }
 
@@ -108,12 +113,20 @@ public class Student {
         this.major = major;
     }
 
-    public Integer getGrade_class() {
-        return grade_class;
+    public String getDirection() {
+        return direction;
     }
 
-    public void setGrade_class(Integer grade_class) {
-        this.grade_class = grade_class;
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public Integer getGrade_class() {
+        return gradeClass;
+    }
+
+    public void setGrade_class(Integer gradeClass) {
+        this.gradeClass = gradeClass;
     }
 
     public String getIdCheckNumber() {

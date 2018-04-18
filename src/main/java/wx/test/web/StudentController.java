@@ -56,7 +56,7 @@ public class StudentController {
         System.out.println("remove student by openID: "+openID);
         Student student = studentService.findStudentByOpenID(openID);
         System.out.println("Before-remove: "+student.toString());
-        studentService.bindOpenID(student.getStudentID(),"");
+        studentService.bindOpenID(student.getStudentID(),null);
         System.out.println("After-remove: "+studentService.findStudentByStudentID(student.getStudentID()).toString());
         return "redirect:";
     }
