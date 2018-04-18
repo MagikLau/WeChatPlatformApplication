@@ -75,7 +75,7 @@ public class WeChatPlatformApplication {
     @WxButton(type = WxButton.Type.VIEW,
             group = WxButton.Group.RIGHT,
             order = WxButton.Order.FIRST,
-            url = "https://wj.qq.com/s/1935142/9664",
+            url = "http://106.15.186.77/wx/direction",//"https://wj.qq.com/s/1935142/9664",
             name = "方向选择")
     @WxAsyncMessage
     public WxMessage right02(WxRequest wxRequest, WxUser wxUser) {

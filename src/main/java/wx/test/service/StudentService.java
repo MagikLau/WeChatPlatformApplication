@@ -21,8 +21,12 @@ public interface StudentService {
 
     List<Student> findAllByName(String name);
 
+    List<Student> findByMajorAndGradeClassAndOpenIDNotNull(String major, Integer gradeClass);
+
     Boolean checkId(Integer studentID, String idCheckNumber);
 
     Boolean bindOpenID(Integer studentID, String openID);
+
+    Boolean bindDirection(Integer studentID, String direction);
 
 }

@@ -37,6 +37,10 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findAllByName(name);
     }
 
+    public List<Student> findByMajorAndGradeClassAndOpenIDNotNull(String major, Integer gradeClass) {
+        return studentRepository.findByMajorAndGradeClassAndOpenIDNotNull(major, gradeClass);
+    }
+
     public List<Student> findAll() {
 
         return studentRepository.findAll();
@@ -54,19 +58,22 @@ public class StudentServiceImpl implements StudentService {
 
     public Boolean checkId(Integer studentID, String idCheckNumber) {
 
-        return studentRepository.existsByStudentIDAndIdCheckNumber(studentID, idCheckNumber);//并不取分大小写
+        return studentRepository.existsByStudentIDAndIdCheckNumber(studentID, idCheckNumber);//不取分大小写
     }
 
     public Boolean bindOpenID(Integer studentID, String openID){
         Student student = studentRepository.findStudentByStudentID(studentID);
         student.setOpenID(openID);
         Student studentWithOpenID = studentRepository.save(student);
-        if( studentWithOpenID.getOpenID().equals(student.getOpenID()) ){
-            return true;
-        }else {
-            return false;
-        }
+        Boolean result ;
+        result = studentWithOpenID.getOpenID().equals(student.getOpenID());
+        return result;
 
+    }
+
+    public Boolean bindDirection(Integer studentID, String direction){
+
+        return false;
     }
 
 }

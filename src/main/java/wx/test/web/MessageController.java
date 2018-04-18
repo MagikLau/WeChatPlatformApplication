@@ -1,13 +1,18 @@
 package wx.test.web;
 
-import com.mxixm.fastboot.weixin.annotation.WxAsyncMessage;
-import com.mxixm.fastboot.weixin.annotation.WxMessageMapping;
 import com.mxixm.fastboot.weixin.module.message.WxMessage;
-import com.mxixm.fastboot.weixin.module.message.WxMessageTemplate;
-import com.mxixm.fastboot.weixin.module.web.WxRequest;
-import com.mxixm.fastboot.weixin.module.web.session.WxSession;
+import com.mxixm.fastboot.weixin.service.WxApiService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import wx.test.model.Student;
+import wx.test.service.StudentService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by MagikLau on 2018/3/12.
@@ -17,15 +22,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/messages")
 public class MessageController{
 
-//    @WxMessageMapping(type = WxMessage.Type.TEXT)
-//    public String receiveMsgText(WxRequest wxRequest, String content) {
-//        WxSession wxSession = wxRequest.getWxSession();
-//
-//        if (wxSession != null && wxSession.getAttribute("last") != null) {
-//            String lastMsg = wxSession.getAttribute("last").toString();
-//        }
-//        return "messages";
-//    }
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    WxApiService wxApiService;
 
     @RequestMapping("")
     public String receiveMsgText() {
@@ -36,11 +37,45 @@ public class MessageController{
     @RequestMapping(value = "/sendToAll", method = RequestMethod.POST)
     @ResponseBody
     public WxMessage sendMsg(@RequestParam("content") String content) {
-        System.out.println("MsgContent:"+content);
+        System.out.println("sendMsg:"+content);
 
         return WxMessage.Text.builder()
                 .content(content)
                 .toGroup()
+                .build();
+    }
+
+    @RequestMapping(value = "/sendByTag", method = RequestMethod.POST)
+    @ResponseBody
+    public WxMessage sendMsgByTag(@RequestParam("content") String content, @RequestParam("tagId")Integer tagId) {
+        System.out.println("sendMsgByTag:"+content);
+
+        return WxMessage.Text.builder()
+                .content(content)
+                .toGroup(tagId)
+                .build();
+    }
+
+    @RequestMapping(value = "/sendByParam", method = RequestMethod.POST)
+    @ResponseBody
+    public WxMessage sendMsgByParam(@RequestParam("content") String content,
+                                    @RequestParam(value = "academy", required = false)String academy,
+                                    @RequestParam(value = "major", required = false)String major,
+                                    @RequestParam(value = "gradeClass", required = false)Integer gradeClass,
+                                    @RequestParam(value = "direction", required = false)String direction) {
+        System.out.println("sendMsgByParam:"+content);
+        System.out.println("Param: {academy: "+academy+", major: "+major+", gradeClass: "+gradeClass+", direction: "+direction+"}");
+        List<Student> studentList = studentService.findByMajorAndGradeClassAndOpenIDNotNull(major, gradeClass);
+        System.out.println("studentList: "+studentList);
+
+        List<String>openIdList = new ArrayList<>();
+        for( Student student : studentList ){
+            openIdList.add(student.getOpenID());
+        }
+
+        return  WxMessage.Text.builder()
+                .content(content)
+                .toGroup(openIdList)
                 .build();
     }
 

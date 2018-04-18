@@ -26,6 +26,8 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findAllByName(String name);
 
+    List<Student> findByMajorAndGradeClassAndOpenIDNotNull(String major, Integer gradeClass);
+
     Boolean existsByStudentIDAndIdCheckNumber(Integer studentID, String idCheckNumber);
 
     Student save(Student student);

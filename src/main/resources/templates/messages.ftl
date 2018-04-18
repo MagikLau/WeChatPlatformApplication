@@ -447,25 +447,112 @@
 										<div class="container" id="container">
 											<div class="page input js_show">
 												<form method="POST" action="/messages/sendToAll">
-                                                    <div class="page__bd">
-                                                        <div class="weui-cells weui-cells_form">
-                                                            <div class="weui-cell">
-                                                                <div class="weui-cell__bd">
-                                                                    <textarea class="weui-textarea" placeholder="请输入文本" rows="3" name="content" maxlength="200"></textarea>
-                                                                    <div class="weui-textarea-counter">最多200字</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <input class="weui-desktop-btn weui-desktop-btn_primary" type="submit" value="发送"/>
+													<div class="page__bd">
+														<div class="weui-cells weui-cells_form">
+															<div class="weui-cell">
+																<div class="weui-cell__bd">
+																	<textarea class="weui-textarea" placeholder="请输入文本" rows="3" name="content" maxlength="200"></textarea>
+																	<div class="weui-textarea-counter">最多200字</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<input class="weui-desktop-btn weui-desktop-btn_primary" type="submit" value="发送"/>
 												</form>
 											</div>
 
 										</div>
-								    </div>
+									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="weui-desktop-layout__main__bd weui-desktop-panel main_bd">
+							<div class="inner_container_box side_r cell_layout">
+								<div class="inner_main">
+									<div class="bd">
+										<div class="weui-desktop-panel__title">分组推送</div>
+										<div class="container" id="container">
+											<div class="weui-cells__title">专业</div>
+											<div class="weui-cells">
+												<div class="weui-cell weui-cell_select">
+													<div class="weui-cell__bd">
+														<select class="weui-select" id="major">
+															<option selected="" value=""></option>
+															<option value="软工">软工</option>
+															<option value="计算">计算</option>
+															<option value="信管">信管</option>
+															<option value="统计">统计</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="weui-cells__title">班级</div>
+											<div class="weui-cells">
+												<div class="weui-cell weui-cell_select">
+													<div class="weui-cell__bd">
+														<select class="weui-select" id="gradeClass">
+															<option selected="" value=""></option>
+															<option value="1401">1401</option>
+															<option value="1402">1402</option>
+															<option value="1403">1403</option>
+															<option value="1404">1404</option>
+														</select>
+													</div>
+												</div>
+
+											</div>
+											<div class="page input js_show">
+												<div class="page__bd">
+													<div class="weui-cells weui-cells_form">
+														<div class="weui-cell">
+															<div class="weui-cell__bd">
+																<textarea id="textarea02" class="weui-textarea" placeholder="请输入文本" rows="3" name="content" maxlength="200"></textarea>
+																<div class="weui-textarea-counter">最多200字</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<a id="sendByParamBtn" class="weui-desktop-btn weui-desktop-btn_primary" href="javascript:check();">确定</a>
+											</div>
+											<script type="text/javascript">
+												function check() {
+													var major = $("#major").val();
+													var gradeClass = $("#gradeClass").val();
+													var textarea02 = $("#textarea02").val();
+													var preCheck = "";
+													if( textarea02 === null || textarea02 === "" ){
+													    preCheck = "[无内容]";
+													}
+													if( preCheck.length > 0 ){//初步检查
+														preCheck += "异常，请先处理";
+														alert(preCheck);
+													}else {//检查无误，发送请求
+														$.ajax({
+															url: "/messages/sendByParam",
+															type: "POST",
+															data: "content="+textarea02+"&major="+major+"&gradeClass="+gradeClass,
+															success: function (data) {
+																alert('Sent successful: '+content);
+																window.location.href = '/messages';
+
+															},
+															error: function (data) {
+															    console.log(data);
+																alert('error - '+data);
+															}
+														});
+													}
+
+												}
+
+											</script>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
