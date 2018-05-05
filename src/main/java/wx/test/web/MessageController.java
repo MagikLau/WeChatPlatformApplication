@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import wx.test.model.Student;
 import wx.test.service.StudentService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,11 @@ public class MessageController{
     public String receiveMsgText() {
 
         return "messages";
+    }
+
+    @RequestMapping("doError")
+    public void err() {
+        throw new RuntimeException("error");
     }
 
     @RequestMapping(value = "/sendToAll", method = RequestMethod.POST)
@@ -62,21 +69,28 @@ public class MessageController{
                                     @RequestParam(value = "academy", required = false)String academy,
                                     @RequestParam(value = "major", required = false)String major,
                                     @RequestParam(value = "gradeClass", required = false)Integer gradeClass,
-                                    @RequestParam(value = "direction", required = false)String direction) {
-        System.out.println("sendMsgByParam:"+content);
-        System.out.println("Param: {academy: "+academy+", major: "+major+", gradeClass: "+gradeClass+", direction: "+direction+"}");
-        List<Student> studentList = studentService.findByMajorAndGradeClassAndOpenIDNotNull(major, gradeClass);
-        System.out.println("studentList: "+studentList);
+                                    @RequestParam(value = "direction", required = false)String direction ) {
+        try{
+            System.out.println("sendMsgByParam:"+content);
+            System.out.println("Param: {academy: "+academy+", major: "+major+", gradeClass: "+gradeClass+", direction: "+direction+"}");
+            List<Student> studentList = studentService.findByMajorAndGradeClassAndOpenIDNotNull(major, gradeClass);
+            System.out.println("studentList: "+studentList);
+            List<String>openIdList = new ArrayList<>();
 
-        List<String>openIdList = new ArrayList<>();
-        for( Student student : studentList ){
-            openIdList.add(student.getOpenID());
+            for( Student student : studentList ){
+                String openID = student.getOpenID();
+                if( openID != null ){
+                    openIdList.add(openID);
+                }
+            }
+            return WxMessage.Text.builder()
+                    .content(content)
+                    .toGroup(openIdList)
+                    .build();
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
-        return  WxMessage.Text.builder()
-                .content(content)
-                .toGroup(openIdList)
-                .build();
+        return null;
     }
 
 //    @RequestMapping(value = "/sendMsg", method = RequestMethod.POST)
