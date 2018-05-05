@@ -12,16 +12,16 @@
 <div class="weui-cells__title">身份绑定</div>
 
 <div class="weui-cells weui-cells_form">
-	<div id="msg_dialog" style="display: none;">
-		<div class="weui-mask"></div>
-		<div class="weui-dialog">
-			<div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗</strong></div>
-			<div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
-			<div class="weui-dialog__ft">
-				<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">主操作</a>
-			</div>
-		</div>
-	</div>
+	<#--<div id="msg_dialog" style="display: none;">-->
+		<#--<div class="weui-mask"></div>-->
+		<#--<div class="weui-dialog">-->
+			<#--<div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗</strong></div>-->
+			<#--<div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>-->
+			<#--<div class="weui-dialog__ft">-->
+				<#--<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">主操作</a>-->
+			<#--</div>-->
+		<#--</div>-->
+	<#--</div>-->
 	<form id="bind_form" <#--action="/wx/bind/check" onsubmit="return check();"-->>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">openID</label></div>
@@ -70,7 +70,7 @@
 </div>
 <script type="text/javascript">
 	function check() {
-		var $msg_dialog = $('#msg_dialog');
+		// var $msg_dialog = $('#msg_dialog');
 		var $toptips = $('.weui-toptips');
 		var studentID = $("input[name='studentID']").val();
 		var last6ID = $("input[name='last6ID']").val();

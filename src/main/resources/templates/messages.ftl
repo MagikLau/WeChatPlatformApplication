@@ -446,19 +446,20 @@
 										<div class="weui-desktop-panel__title">群发消息</div>
 										<div class="container" id="container">
 											<div class="page input js_show">
-												<form method="POST" action="/messages/sendToAll">
+												<#--<form method="POST" action="/messages/sendToAll">-->
 													<div class="page__bd">
 														<div class="weui-cells weui-cells_form">
 															<div class="weui-cell">
 																<div class="weui-cell__bd">
-																	<textarea class="weui-textarea" placeholder="请输入文本" rows="3" name="content" maxlength="200"></textarea>
+																	<textarea id="textarea01" class="weui-textarea" placeholder="请输入文本" rows="3" name="content" maxlength="200"></textarea>
 																	<div class="weui-textarea-counter">最多200字</div>
 																</div>
 															</div>
 														</div>
 													</div>
-													<input class="weui-desktop-btn weui-desktop-btn_primary" type="submit" value="发送"/>
-												</form>
+													<#--<input class="weui-desktop-btn weui-desktop-btn_primary" type="submit" value="发送"/>-->
+													<a id="sendByParamBtn" class="weui-desktop-btn weui-desktop-btn_primary" href="javascript:sendGroupMsg01();">发送</a>
+												<#--</form>-->
 											</div>
 
 										</div>
@@ -513,10 +514,37 @@
 														</div>
 													</div>
 												</div>
-												<a id="sendByParamBtn" class="weui-desktop-btn weui-desktop-btn_primary" href="javascript:check();">确定</a>
+												<a id="sendByParamBtn" class="weui-desktop-btn weui-desktop-btn_primary" href="javascript:sendGroupMsg02();">确定</a>
 											</div>
 											<script type="text/javascript">
-												function check() {
+												function sendGroupMsg01() {
+													var textarea01 = $("#textarea01").val();
+													var preCheck = "";
+													if( textarea01 === null || textarea01 === "" ){
+														preCheck = "[无内容]";
+													}
+													if( preCheck.length > 0 ){//初步检查
+														preCheck += "异常，请先处理";
+														// alert(preCheck);
+													}else {//检查无误，发送请求
+														$.ajax({
+															url: "/messages/sendToAll",
+															type: "POST",
+															data: "content="+textarea01,
+															success: function (data) {
+																alert('Sent successful: '+data);
+																window.location.href = '/messages';
+															},
+															error: function (data) {
+																console.log(data);
+																alert('error - '+data);
+															}
+														});
+													}
+												}
+											</script>
+											<script type="text/javascript">
+												function sendGroupMsg02() {
 													var major = $("#major").val();
 													var gradeClass = $("#gradeClass").val();
 													var textarea02 = $("#textarea02").val();
@@ -533,7 +561,7 @@
 															type: "POST",
 															data: "content="+textarea02+"&major="+major+"&gradeClass="+gradeClass,
 															success: function (data) {
-																alert('Sent successful: '+content);
+																alert('Sent successful: '+data);
 																window.location.href = '/messages';
 
 															},
@@ -543,9 +571,7 @@
 															}
 														});
 													}
-
 												}
-
 											</script>
 										</div>
 									</div>
