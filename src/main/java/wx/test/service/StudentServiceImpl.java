@@ -61,19 +61,35 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.existsByStudentIDAndIdCheckNumber(studentID, idCheckNumber);//不取分大小写
     }
 
-    public Boolean bindOpenID(Integer studentID, String openID){
+    public Boolean bindOpenID(Integer studentID, String openID) {
         Student student = studentRepository.findStudentByStudentID(studentID);
         student.setOpenID(openID);
-        Student studentWithOpenID = studentRepository.save(student);
-        Boolean result ;
-        result = studentWithOpenID.getOpenID().equals(student.getOpenID());
+        Student studentWithOpenID;
+        Boolean result = false;
+        try{
+            studentWithOpenID = studentRepository.save(student);
+            result = (studentWithOpenID.getOpenID()==null&&student.getOpenID()==null) || (studentWithOpenID.getOpenID()).equals(student.getOpenID());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("result: "+result);
         return result;
 
     }
 
     public Boolean bindDirection(Integer studentID, String direction){
+        Student student = studentRepository.findStudentByStudentID(studentID);
+        student.setDirection(direction);
+        Student studentWithDirection = null;
+        Boolean result = false;
+        try{
+            studentWithDirection = studentRepository.save(student);
+            result = studentWithDirection.getOpenID().equals(student.getOpenID());
+        }catch (Exception e){
+            System.out.println("result: "+result+", studentWithDirection: "+studentWithDirection);
+        }
 
-        return false;
+        return result;
     }
 
 }

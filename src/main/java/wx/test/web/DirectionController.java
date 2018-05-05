@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import wx.test.model.Student;
 import wx.test.service.StudentService;
 import wx.test.service.SubscriberService;
@@ -15,6 +16,7 @@ import wx.test.service.SubscriberService;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
 /**
  * Created by MagikLau on 2018/1/29.
@@ -48,8 +50,12 @@ public class DirectionController {
             modelMap.addAttribute("studentID", student.getStudentID());
             System.out.println("studentID:"+student.getStudentID());
             String direction = student.getDirection();
+            HashMap<String, String> dir = new HashMap<>();
+            dir.put("1","Java开发");
+            dir.put("2","移动互联网应用开发");
+            dir.put("3","数据库应用");
             if( direction != null ){
-                modelMap.addAttribute("direction", direction);
+                modelMap.addAttribute("direction", dir.get(direction));
                 System.out.println("direction:"+direction);
                 return "direction_confirm";
             }
@@ -64,37 +70,42 @@ public class DirectionController {
 
     @RequestMapping("/check")/*(value = "/wx/bind/check", method = RequestMethod.POST)*/
     public void directionCheck(ModelMap modelMap, HttpServletResponse httpServletResponse,
-                                          String openID, Integer studentID, String last6ID) throws IOException {
+                                 Integer studentID, String direction) throws IOException{
         httpServletResponse.setContentType("application/json;charset=utf-8");
-
-        Boolean checked = studentService.checkId(studentID, last6ID);
-        System.out.println("Direction checked:"+checked);
-        String data ="";
-//        if( checked ){
-//            studentService.bindOpenID(studentID, openID);
-//            modelMap.addAttribute("studentID", studentID);
-//            data = "{\"status\":\"ok\",\"msg\":\"绑定成功\"}";
-//        }else{
-//            data = "{\"status\":\"error\",\"msg\":\"绑定失败\"}";
-//        }
+        System.out.println("directionCheck: "+direction);
+        String data ;
+        if( direction != null ){
+            studentService.bindDirection(studentID, direction);
+            modelMap.addAttribute("studentID", studentID);
+            data = "{\"status\":\"ok\",\"msg\":\"操作成功\"}";
+        }else{
+            data = "{\"status\":\"error\",\"msg\":\"操作失败\"}";
+        }
         PrintWriter out = httpServletResponse.getWriter();
         out.write(data);
         out.flush();
         out.close();
-//        return data;
     }
 
     @RequestMapping("/confirm")/*(value = "/wx/bind/confirm", method = RequestMethod.POST)*/
     public String directionConfirm(ModelMap modelMap, Integer studentID) {
-        String result = "";
-//        if( studentID != null ){
-//            modelMap.addAttribute("studentID", studentID);
-//            result = "bind_confirm";
-//        }else{
-//            String msg = "验证有误.";
-//            modelMap.addAttribute("msg", msg);
-//            result = "redirect:";
-//        }
+        String result ;
+        String direction = studentService.findStudentByStudentID(studentID).getDirection();
+        HashMap<String, String> dir = new HashMap<>();
+        dir.put("1","Java开发");
+        dir.put("2","移动互联网应用开发");
+        dir.put("3","数据库应用");
+        if( studentID != null ){
+            modelMap.addAttribute("studentID", studentID);
+            String dirName = dir.get(direction);
+            System.out.println("directionConfirm: "+dirName);
+            modelMap.addAttribute("direction", dirName);
+            result = "direction_confirm";
+        }else{
+            String msg = "验证有误.";
+            modelMap.addAttribute("msg", msg);
+            result = "redirect:";
+        }
         return result;
     }
 
