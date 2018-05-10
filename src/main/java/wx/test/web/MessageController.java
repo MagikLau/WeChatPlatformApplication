@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import wx.test.model.Student;
 import wx.test.service.StudentService;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +32,6 @@ public class MessageController{
     public String receiveMsgText() {
 
         return "messages";
-    }
-
-    @RequestMapping("doError")
-    public void err() {
-        throw new RuntimeException("error");
     }
 
     @RequestMapping(value = "/sendToAll", method = RequestMethod.POST)

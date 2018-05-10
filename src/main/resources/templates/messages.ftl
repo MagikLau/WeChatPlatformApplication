@@ -533,7 +533,8 @@
 															data: "content="+textarea01,
 															success: function (data) {
 																alert('Sent successful: '+data);
-																window.location.href = '/messages';
+																// window.location.href = '/messages';
+																$("#textarea01").val("");
 															},
 															error: function (data) {
 																console.log(data);
@@ -562,8 +563,8 @@
 															data: "content="+textarea02+"&major="+major+"&gradeClass="+gradeClass,
 															success: function (data) {
 																alert('Sent successful: '+data);
-																window.location.href = '/messages';
-
+																// window.location.href = '/messages';
+																$("#textarea02").val("");
 															},
 															error: function (data) {
 															    console.log(data);
