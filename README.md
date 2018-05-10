@@ -1,14 +1,16 @@
 # WeChatPlatformApplication
 
-**WeChatPlatform Application for Graduation Project**
+**WeChatPlatform Application for Graduation Project** (Acceptance of works has been passed on May 9th.)
 
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
 
 ## Features
 
 - Simplify work in teaching assistant by using WeChatPlatform.
 - Integrate SpringBoot, SpringSecurity, SpringMVC , SpringDataJPA framework to achieve after end of the Web  project.
-- Using JQuery, WeUI to achieve after end of the Web project.
+- Using JQuery, WeUI to achieve front end of the Web project.
 - Integrate FastBootWeiXin to achieve the WeChat project.
 
 ## How to use
@@ -135,6 +137,7 @@ TBD
 - [HikariShine](https://github.com/HikariShine): Thank you so much for the guide of [FastBootWeiXin](https://github.com/FastBootWeixin/FastBootWeixin), which was the core of this project. (However, this shows how much we need interface documentation, lol)
 - YangQF: My master of dissertation, this idea comes from our chatting, and thanks for your help in preparing this project, which couldn't be possible to achieve this degree now without you.
 - DinL: Thanks a lot for plenty of things in this road specially about a few months' instructions on writing resumes.
+- HuoMM: Thanks for advices of acceptance and thesis, it's time to separate technology from theory. (And thanks for the first Star QwQ)
 
 ## Reference
 
