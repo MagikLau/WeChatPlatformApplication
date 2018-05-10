@@ -130,7 +130,11 @@
 
 ## Introduction
 
-TBD
+SystemStructureDiagram:
+
+[![SystemStructureDiagram](./Wiki/SystemStructureDiagram.png)](./Wiki/SystemStructureDiagram.png)
+
+emmmm, I think this diagram is enough to describe this system.
 
 ## Special thanks & Credits
 
