@@ -173,7 +173,7 @@ server.port=443
    wx.token=# Your token 
    ```
 
-		详情可查看[微信公众平台技术文档-接入指南-填写服务器配置](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421135319)
+	详情可查看[《微信公众平台技术文档》—接入指南—填写服务器配置](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421135319)
 
 4. JS接口安全域名修改(若需使用JS-SDK时才需配置，本项目中未使用，可不做配置)
 
