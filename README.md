@@ -267,23 +267,23 @@ server.port=443
 #### Remote Debug
 
 1. Open IDEA, find the Edit Configuration.
-  ![RemoteDebug01](./wiki/RemoteDebug01.png)
+  ![RemoteDebug01](./Wiki/RemoteDebug01.png)
 
 2. Remote，一开始可能没有Remote配置，新建一个即可
 
-  ![RemoteDebug02](./wiki/RemoteDebug02.png)
+  ![RemoteDebug02](./Wiki/RemoteDebug02.png)
 
 3. 选择远端服务器上运行的JVM版本，这里是Java8于是选择5 - 8
 
-   ![RemoteDebug03](./wiki/RemoteDebug03.png)
+   ![RemoteDebug03](./Wiki/RemoteDebug03.png)
 
 4. 配置Host和Port，Host是远端服务器的ip，port自定一个端口(需配合安全组的设置，这里用的8080，小心别和Tomcat冲突了)
 
-   ![RemoteDebug04](./wiki/RemoteDebug04.png)
+   ![RemoteDebug04](./Wiki/RemoteDebug04.png)
 
 5. 点这串参数右边的复制按钮，然后OK
 
-   ![RemoteDebug05](./wiki/RemoteDebug05.png)
+   ![RemoteDebug05](./Wiki/RemoteDebug05.png)
 
 6. 服务器运行命令，等待连接
 
