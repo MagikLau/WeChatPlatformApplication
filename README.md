@@ -12,12 +12,27 @@
 
 欲通过微信公众平台优化处理步骤：专业方向选择{教学办发布专业方向统计的通知→学生进行专业方向选择→教学办进行统计}
 
-## [Features](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Features)
+## [Features](https://github.com/LauItachi/WeChatPlatformApplication/wiki#features)
 
-- Simplify work in teaching assistant by using WeChatPlatform.
-- Integrate SpringBoot, SpringSecurity, SpringMVC , SpringDataJPA framework to achieve after end of the Web  project.
-- Using JQuery, WeUI to achieve after end of the Web project.
-- Integrate FastBootWeiXin to achieve the WeChat project.
+- 适合场景：本项目用于毕业设计，目标搭建Web应用和微信应用，实现自建数据库管理和微信订阅号的接口调用。系统主要提供给**开发者**交流学习，还不能直接投入生产环境使用。
+
+- 主要功能：本系统可展示效果——“微信端扫码关注测试号->网页端查看学生信息->网页端群发消息通知绑定学号->微信端绑定学号->网页端群发推送消息进行方向选择->微信端进行方向选择->网页端根据专业推送消息”，后续开发者可参考此实现进行所需功能的设计和开发，进行网站和微信工作平台的统一化开发。
+
+- 最初想法来源：专业方向选择{教学办发布专业方向统计的通知→教学办通知班长领取统计表格→教学办发放统计表格给各班班长→班长到每个同学处统计→同学选择专业方向并签名确认→班长确认统计完成→班长上交表格到教学办→教学办进行统计}，步骤过长，处理复杂，效率不高。
+
+  欲通过微信公众平台优化处理步骤：专业方向选择{教学办发布专业方向统计的通知→学生进行专业方向选择→教学办进行统计}
+
+- 网页端-后端：SpringBoot, SpringSecurity, SpringMVC , SpringDataJPA framework
+
+  网页端-前端：JQuery, WeUI, weui-desktop
+
+  微信公众平台的开发通过FastBootWeiXin框架实现
+
+- 可扩展性：
+
+  用户属性可扩展：SpringDataJPA 支持通过代码注释和配置，直接生成/更新数据库表，需添加用户属性只需在User类或Student类中添加属性变量和注释对应数据库列即可。
+
+  用户类型可扩展：目前网页端用户只有User，根据不同需求可增添诸如“管理员“、”客服“等用户类型，用户类型可通过SpringSecurity来进行身份验证，添加不同用户的验证器，在WebSecurityConfig类中增加对新用户类别的configure配置进行登陆验证和默认跳转，来添加用户类型。
 
 ## [How to use](https://github.com/LauItachi/WeChatPlatformApplication/wiki/How-to-use)
 
