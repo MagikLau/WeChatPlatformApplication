@@ -1,10 +1,12 @@
 # WeChatPlatformApplication
 
-**WeChatPlatform Application for Graduation Project** (Acceptance of works has been passed on May 9th.)
+**WeChatPlatform Application for Graduation Project** 
+
+Through graduation design defense on May 19th. Grade: 94. Level: Excellent.
 
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-详细介绍见本项目[wiki](https://github.com/LauItachi/WeChatPlatformApplication/wiki)
+毕设已结束，开始投身[wiki](https://github.com/LauItachi/WeChatPlatformApplication/wiki)
 
 ## [Features](https://github.com/LauItachi/WeChatPlatformApplication/wiki#features)
 
@@ -39,7 +41,7 @@
 - [Run on Server](https://github.com/LauItachi/WeChatPlatformApplication/wiki/How-to-use#run-on-server)
 - [Remote Debug](https://github.com/LauItachi/WeChatPlatformApplication/wiki/How-to-use#remote-debug)
 
-## [Stack](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Stack)
+## [Stack](https://github.com/LauItachi/WeChatPlatformApplication/wiki#stack)
 
 - JQuery
   - Ajax
@@ -58,21 +60,16 @@
 
 ## [FAQ](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ)
 
-- #### [微信大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#1-%E5%BE%AE%E4%BF%A1%E5%A4%A7%E5%9D%91)
-
-- #### [前端大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#2-%E5%89%8D%E7%AB%AF%E5%A4%A7%E5%9D%91)
-
-- #### [后端大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#3-%E5%90%8E%E7%AB%AF%E5%A4%A7%E5%9D%91)
-
-- #### [服务器大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%A7%E5%9D%91)
-
-- #### [故障排除](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#5-%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4)
-
-- #### [wiki编写](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#6-wiki%E7%BC%96%E5%86%99)
+- [微信大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#1-%E5%BE%AE%E4%BF%A1%E5%A4%A7%E5%9D%91)
+- [前端大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#2-%E5%89%8D%E7%AB%AF%E5%A4%A7%E5%9D%91)
+- [后端大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#3-%E5%90%8E%E7%AB%AF%E5%A4%A7%E5%9D%91)
+- [服务器大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%A7%E5%9D%91)
+- [故障排除](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#5-%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4)
+- [wiki编写](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#6-wiki%E7%BC%96%E5%86%99)
 
 ## [Special thanks & Credits](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Special-thanks-&-Credits)
 
-## [Reference](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Reference)
+## [Reference](https://github.com/LauItachi/WeChatPlatformApplication/wiki#reference)
 
 - [registration-login-spring-hsql](https://hellokoding.com/registration-and-login-example-with-spring-security-spring-boot-spring-data-jpa-hsql-jsp/)
 - [FastBootWeiXin](https://github.com/FastBootWeixin/FastBootWeixin)
