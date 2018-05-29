@@ -58,6 +58,18 @@ Through graduation design defense on May 19th. Grade: 94. Level: Excellent.
 
 ## [Introduction](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction)
 
+[Main functions](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction#main-functions) includes 2 lines: Web & WeChat:
+
+![WorkingProcess.png](https://github.com/LauItachi/WeChatPlatformApplication/blob/master/Wiki/WorkingProcess.png)
+
+[System Structure Diagram](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction#system-structure-diagram): ( See [here](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction#data-flow-eg-sendinggroupmsg-) for the flow of data )
+
+[![SystemStructureDiagram](https://github.com/LauItachi/WeChatPlatformApplication/blob/master/Wiki/SystemStructureDiagram.png)](https://github.com/LauItachi/WeChatPlatformApplication/blob/master/Wiki/SystemStructureDiagram.png)
+
+[Core processing logic](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction#core-processing-logic-eg-binding-) you can refer: e.g. Binding( See [here](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Introduction#details) for Detail )
+
+![BindingProcess.png](https://github.com/LauItachi/WeChatPlatformApplication/blob/master/Wiki/BindingProcess.png) 
+
 ## [FAQ](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ)
 
 - [微信大坑](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#1-%E5%BE%AE%E4%BF%A1%E5%A4%A7%E5%9D%91)
@@ -68,6 +80,12 @@ Through graduation design defense on May 19th. Grade: 94. Level: Excellent.
 - [wiki编写](https://github.com/LauItachi/WeChatPlatformApplication/wiki/FAQ#6-wiki%E7%BC%96%E5%86%99)
 
 ## [Special thanks & Credits](https://github.com/LauItachi/WeChatPlatformApplication/wiki/Special-thanks-&-Credits)
+
+- [HikariShine](https://github.com/HikariShine): Thank you so much for the guide of [FastBootWeiXin](https://github.com/FastBootWeixin/FastBootWeixin), which was the core of this project. (However, this shows how much we need interface documentation, lol)
+- YangQF: My master of dissertation, this idea comes from our chatting, and thanks for your help in preparing this project, which couldn't be possible to achieve this degree now without you.
+- DinL: Thanks a lot for plenty of things in this road specially about a few months' instructions on writing resumes.
+- HuoMM: Thanks for advices of acceptance and thesis, it's time to separate technology from theory. (And thanks for the first Star QwQ)
+
 
 ## [Reference](https://github.com/LauItachi/WeChatPlatformApplication/wiki#reference)
 
