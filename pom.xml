@@ -55,7 +55,7 @@
         <dependency>
             <groupId>com.mxixm</groupId>
             <artifactId>fastboot-weixin</artifactId>
-            <version>0.6.0</version>
+            <version>0.6.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

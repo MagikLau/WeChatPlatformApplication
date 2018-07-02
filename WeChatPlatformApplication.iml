@@ -95,7 +95,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.3.13.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.mxixm:fastboot-weixin:0.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.mxixm:fastboot-weixin:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.mapdb:mapdb:1.0.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
