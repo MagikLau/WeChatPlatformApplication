@@ -6,7 +6,7 @@ Through graduation design defense on May 19th. Grade: 94. Level: Excellent.
 
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-毕设已结束，开始投身[wiki](https://github.com/LauItachi/WeChatPlatformApplication/wiki)
+[wiki](https://github.com/LauItachi/WeChatPlatformApplication/wiki)
 
 ## [Features](https://github.com/LauItachi/WeChatPlatformApplication/wiki#features)
 
